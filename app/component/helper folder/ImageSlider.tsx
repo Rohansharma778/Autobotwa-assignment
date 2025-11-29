@@ -74,6 +74,11 @@ export function ImageSlider({
       aria-label="Image slider"
       tabIndex={0}
     >
+      {/* RF Logo - Top Left Corner */}
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
+        <span className="text-2xl md:text-3xl font-black text-black tracking-tight">RF</span>
+      </div>
+
       {/* Image Container - MOBILE OPTIMIZED */}
       <div className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen overflow-hidden bg-muted">
         {images.map((image, index) => (

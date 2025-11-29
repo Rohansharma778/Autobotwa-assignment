@@ -48,7 +48,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-medium mb-1">Email:</p>
-                <p>info@gtmfitness.com</p>
+                <p>info@Reformfitness.com</p>
               </div>
             </div>
           </div>

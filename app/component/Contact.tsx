@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import {ContactForm} from './ContactForm'
+import {ContactForm} from './helper folder/ContactForm'
 
 const Contact = () => {
   return (
