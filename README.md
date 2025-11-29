@@ -1,58 +1,23 @@
-# Reform Fitness Landing Page
+# Reform Fitness - Landing Page
 
-A modern, responsive landing page for GTM Fitness built with Next.js, featuring an image slider, feature cards, testimonials, and contact form.
+A modern, responsive fitness business landing page built with Next.js and Tailwind CSS.
 
-## Features
+## 🚀 Live Demo
+[View Live Site](https://autobotwa-assignment-alpha.vercel.app/)
 
-- 🎨 Modern UI with Tailwind CSS
-- 🖼️ Auto-playing image slider with hero section
-- 💪 Feature showcase cards
-- ⭐ Customer testimonials
-- 📱 Fully responsive design
-- 📬 Contact form
-- 🌓 Dark mode support
+## 🛠️ Tech Stack
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Lucide React (Icons)
+- Vercel v0 (UI Generation)
 
-## Getting Started
+## 📦 Features
+- Responsive Hero Section
+- Features Showcase
+- Customer Testimonials
+- Contact Form
+- Modern Footer
 
-First, install the dependencies:
-
-```bash
-npm install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Project Structure
-
-```
-my-landing-page/
-├── app/
-│   ├── component/
-│   │   ├── Hero_Section.tsx
-│   │   ├── Feature.tsx
-│   │   ├── Testimonial.tsx
-│   │   ├── Contact.tsx
-│   │   └── Footer.tsx
-│   ├── assest/          # Images
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-└── public/
-```
-
-## Technologies Used
-
-- **Next.js 15** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
-
-## Autobotwa Assignment
-
-This project is part of the Autobotwa internship evaluation assignment.
+## 🎨 Built With Vercel v0
+All UI components were generated using Vercel v0 for rapid prototyping.
