@@ -56,4 +56,3 @@ my-landing-page/
 ## Autobotwa Assignment
 
 This project is part of the Autobotwa internship evaluation assignment.
-

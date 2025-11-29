@@ -66,7 +66,7 @@ export function ImageSlider({
 
   return (
     <div
-      className="relative w-full bg-background rounded-lg overflow-hidden group"
+      className="relative w-full bg-background overflow-hidden group"
       onMouseEnter={() => setIsAutoPlay(false)}
       onMouseLeave={() => setIsAutoPlay(autoPlay)}
       onKeyDown={handleKeyDown}
@@ -74,27 +74,36 @@ export function ImageSlider({
       aria-label="Image slider"
       tabIndex={0}
     >
-      {/* Image Container */}
-      <div className="relative w-full aspect-video overflow-hidden bg-muted">
+      {/* Image Container - MOBILE OPTIMIZED */}
+      <div className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen overflow-hidden bg-muted">
         {images.map((image, index) => (
           <img
             key={index}
             src={image || "/placeholder.svg"}
             alt={`Slide ${index + 1}`}
-            className={`absolute w-full h-full object-cover transition-opacity duration-500 ${
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
 
         {showContent && (
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4 md:px-8">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 text-pretty">{heading}</h2>
-              <p className="text-lg md:text-xl text-white/90 mb-8 text-pretty">{subtext}</p>
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <div className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto">
+              {/* HEADING - Mobile First Responsive */}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight px-2">
+                {heading}
+              </h2>
+              
+              {/* SUBTEXT - Mobile First Responsive */}
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
+                {subtext}
+              </p>
+              
+              {/* CTA BUTTON - Mobile First Responsive */}
               <button
                 onClick={onCTAClick}
-                className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                className="bg-white text-black px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 rounded-lg text-sm sm:text-base md:text-lg font-semibold hover:bg-white/90 hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white shadow-lg active:scale-95"
               >
                 {ctaText}
               </button>
@@ -103,31 +112,33 @@ export function ImageSlider({
         )}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on Small Screens */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        className="hidden md:block absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
       </button>
 
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        className="hidden md:block absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary"
         aria-label="Next slide"
       >
-        <ChevronRight size={24} />
+        <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
       </button>
 
-      {/* Dot Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* Dot Indicators - Responsive */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === current ? "bg-white w-6" : "bg-white/50 hover:bg-white/75"
+            className={`h-1.5 sm:h-2 rounded-full transition-all ${
+              index === current 
+                ? "bg-white w-4 sm:w-6" 
+                : "bg-white/50 hover:bg-white/75 w-1.5 sm:w-2"
             }`}
             aria-label={`Go to slide ${index + 1}`}
             aria-current={index === current}
