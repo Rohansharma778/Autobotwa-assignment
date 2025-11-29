@@ -28,24 +28,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Project Structure
-
-```
-my-landing-page/
-├── app/
-│   ├── component/
-│   │   ├── Hero_Section.tsx
-│   │   ├── Feature.tsx
-│   │   ├── Testimonial.tsx
-│   │   ├── Contact.tsx
-│   │   └── Footer.tsx
-│   ├── assest/          # Images
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-└── public/
-```
-
 ## Technologies Used
 
 - **Next.js 15** - React framework
