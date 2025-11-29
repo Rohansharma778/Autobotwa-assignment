@@ -13,7 +13,7 @@ const Testimonial = () => {
      {
       image: person1.src,
       name: "Amy watson",
-      testimonial: "I love how clean the gym is and how supportive the trainers are. They genuinely care about your progress. Reform Fitness Fitness feels like a second home now.",
+      testimonial: "I love how clean the gym is and how supportive the trainers are. They genuinely care about your progress. Reform Fitness feels like a second home now.",
       rating: 5
     },
     {
